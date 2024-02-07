@@ -1,1 +1,5 @@
 sysdig-cli-scanner
+go-goat
+main.db/
+scan-logs
+main.db.meta.json

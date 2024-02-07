@@ -7,10 +7,14 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
+	"github.com/tidwall/gjson"
 
 	_ "github.com/dgrijalva/jwt-go"
+	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/gogo/protobuf/proto"
 )
+
+const jsonTest = `{"name":{"first":"Ruben","last":"Emerita"},"age":47}`
 
 func initRouter() *gin.Engine {
 	router := gin.Default()
@@ -42,9 +46,16 @@ func initLogger() {
 	})
 }
 
+func doJsonStuff() {
+	value := gjson.Get(jsonTest, "name.last")
+	println(value.String())
+}
+
 func main() {
 
 	initLogger()
+
+	doJsonStuff()
 
 	r := initRouter()
 	r.Run(":8080")

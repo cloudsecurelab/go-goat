@@ -16,18 +16,6 @@ spec:
     spec:
       containers:
       - name: go-goat
-        image: manuelbcd/go-goat:latest
+        image: manuelbcd/go-goat:1.2 # 1.0 #.1.1 #1.2
         ports:
         - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10

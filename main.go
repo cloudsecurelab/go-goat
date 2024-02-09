@@ -9,7 +9,6 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 
-	_ "github.com/dgrijalva/jwt-go"
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/gogo/protobuf/proto"
 )
